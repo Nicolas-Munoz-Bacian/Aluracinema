@@ -2,7 +2,7 @@ import Banner from "components/Banner";
 import styles from "./Player.module.css"
 import Titulo from "components/Titulo";
 import { useParams } from "react-router-dom";
-import videos from "data/db.json";
+import videos from "../../components/data/db.json";
 import NotFound from "pages/NotFound";
 import { useEffect, useState } from "react";
 
@@ -12,11 +12,16 @@ function Player(){
 const parametros = useParams()
 useEffect(()=>{
     fetch(`https://my-json-server.typicode.com/DaniRiverol/alura-cinema-api/videos?id=${parametros.id}`)
-    .then(response=>response.json())
-    .then(data=>{
-        setVideo(...data)
+    .then(response => response.json())
+    .then(data => {
+        const foundVideo = data.find(v => v.id === parseInt(id, 10));
+        setVideo(foundVideo);
     })
- },[])   
+    .catch(error => {
+        console.error('Error fetching video:', error);
+        setVideo(null);
+    });
+}, [id]);
 
 //const video = videos.find(video=> video.id === Number(parametros.id))
 console.log(video);
