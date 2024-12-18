@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import styles from "./Cabecera.module.css"
+import styles from "../../components/Cabecera/Cabecera.module.css"
 import logo from "./logo-Main.png"
 import CabeceraLink from "../CabeceraLink/CabeceraLink"
 
