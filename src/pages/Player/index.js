@@ -1,51 +1,41 @@
+import Banner from "components/Banner";
+import styles from "./Player.module.css"
+import Titulo from "components/Titulo";
+import { useParams } from "react-router-dom";
+import videos from "data/db.json";
+import NotFound from "pages/NotFound";
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import Banner from "../../components/Banner";
-import Titulo from "../../components/Titulo";
-import NotFound from "../../pages/NotFound";
-import styles from "./Player.module.css";
 
-function Player() {
-    const [video, setVideo] = useState(null);
-    const { id } = useParams(); // Usa destructuring para obtener id
-    const navigate = useNavigate();
+function Player(){
+ const [video,setVideo]= useState([])
 
-    useEffect(() => {
-        fetch(`https://my-json-server.typicode.com/DaniRiverol/alura-cinema-api/videos`) // Obtiene todos los videos
-            .then(response => response.json())
-            .then(data => {
-                const foundVideo = data.find(v => v.id === parseInt(id, 10)); // Busca por id
-                if (foundVideo) {
-                    setVideo(foundVideo);
-                } else {
-                    setVideo(null);
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching video:', error);
-                setVideo(null);
-            });
-    }, [id]);
+const parametros = useParams()
+useEffect(()=>{
+    fetch(`https://my-json-server.typicode.com/DaniRiverol/alura-cinema-api/videos?id=${parametros.id}`)
+    .then(response=>response.json())
+    .then(data=>{
+        setVideo(...data)
+    })
+ },[])   
 
-    useEffect(() => {
-        if (video) {
-            window.location.href = video.video;
-        }
-    }, [video]);
+//const video = videos.find(video=> video.id === Number(parametros.id))
+console.log(video);
+if(!video)return <NotFound/>
+    return(
+       <>
+       <Banner img="player" color="#58B9AE"/>
+        <Titulo>
+            <h1>Player</h1>
+        </Titulo>
+        <section className={styles.container}>
+        <iframe width="100%" height="100%" 
+        src={video.link} 
+        title={video.titulo} 
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-    if (!video) return <NotFound />;
-
-    return (
-        <>
-            <Banner img="player" color="#58B9AE" />
-            <Titulo>
-                <h1>Player</h1>
-            </Titulo>
-            <section className={styles.container}>
-                {/* No se necesita el iframe aquí */}
-            </section>
-        </>
-    );
+        </section>
+       </>
+    )
 }
 
 export default Player;
