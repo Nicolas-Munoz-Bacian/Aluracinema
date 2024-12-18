@@ -1,5 +1,5 @@
 import Favoritos from "pages/Favoritos";
-import Inicio from "pages/Inicio";
+import Inicio from "pages/inicio";
 import NotFound from "pages/NotFound";
 import PaginaBase from "pages/PaginaBase";
 import Player from "pages/Player";
