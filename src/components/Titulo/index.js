@@ -1,4 +1,4 @@
-import styles from "../../components/Titulo/Titulo.module.css"
+import styles from "./Titulo.module.css"
 
 function Titulo ({children}){
     return(

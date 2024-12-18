@@ -1,7 +1,8 @@
-.container{
-    text-align: center;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: .5em;
+.container {
+  flex-direction: column;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 0.5em;
 }
