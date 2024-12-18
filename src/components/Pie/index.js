@@ -1,6 +1,6 @@
 import styles from "./Pie.module.css"
 import logo from '../../components/Pie/Sello Nicolás.png'
-import logo from "./logo-alura.png"
+import logoalura from '../../components/Pie/logo-Main.png'
 
 function Pie() {
     return (
