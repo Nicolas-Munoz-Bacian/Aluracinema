@@ -2,6 +2,7 @@ import Banner from "components/Banner";
 import styles from "./Player.module.css"
 import Titulo from "components/Titulo";
 import { useParams } from "react-router-dom";
+import videos from "data/db.json";
 import NotFound from "pages/NotFound";
 import { useEffect, useState } from "react";
 
