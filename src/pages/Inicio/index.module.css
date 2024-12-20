@@ -1,48 +1,22 @@
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7); /* Mantener el fondo negro translúcido */
+.container {
+  background-color: black;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 1rem 7%;
 }
 
-.modalContent {
-  background: black; /* Cambiado a negro */
-  color: white; /* Cambia el texto a blanco para contraste */
-  border: 2px solid cyan; /* Añadido borde celeste cian */
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 600px;
-  width: 100%;
+/* Estilos para los banners */
+.banner {
+  width: 100%; /* Asegura que el banner use todo el ancho */
 }
 
-/* Añadir estilos para los labels */
-.modalContent label {
-  color: cyan; /* Cambiado el color de los labels a celeste cian */
+.banner img {
+  max-width: 100%; /* Asegura que la imagen del banner no exceda el ancho */
+  height: auto; /* Mantiene la proporción de la imagen */
 }
 
-button {
-  background-color: black; /* Fondo negro */
-  color: white; /* Texto blanco */
-  border: 2px solid cyan; /* Borde cyan de 2px */
-  border-radius: 5px; /* Bordes redondeados, ajusta si es necesario */
-  padding: 10px 15px; /* Agregar padding para un mejor aspecto */
-  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-  transition: rgba(91, 104, 108, 0.8); /* Añadir transición para el efecto hover */
-  gap: 10px;
-  margin-top: 5px;
-}
-
-button:hover {
-  background-color: rgba(0, 0, 0, 0.8); /* Efecto hover para oscurecer un poco el fondo */
-}
-
-/* ------------------------------ Responsividad ---------------------------------------*/
+  /* ------------------------------ Responsividad ---------------------------------------*/
 
 /**BREAKPOINTS**/
 
@@ -68,6 +42,24 @@ button:hover {
       align-items: center;
       justify-content: center;
       margin-left: 60px;
+  }
+  .card {
+      height: auto;
+      width: 100%;
+      margin: 0 auto;
+  }
+  .card img {
+      max-width: 100%;
+      height: 100px;
+  }
+  .card-container--value {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  .banner .backend .innovacionYgestion{
+    display: flex;
   }
 
   .container {
@@ -108,5 +100,19 @@ button:hover {
       display: grid;
       grid-template-columns: repeat(2, 1fr); /* Cambiar a dos columnas */
       gap: 20px; /* Espaciado entre columnas */
+  }
+  .card {
+      height: 500px;
+      width: 100%;
+      max-width: 300px;
+  }
+  .card img {
+      max-width: 100%;
+      height: auto;
+  }
+  .card-container--value {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
   }
 }
