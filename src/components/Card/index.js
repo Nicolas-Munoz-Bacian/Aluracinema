@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useFavoritosContext } from "../context/FavoritosContext";
+import { useFavoritosContext } from "../../context/Favoritos";
 import styles from "../Card/Card.module.css";
 import iconFavorito from "./iconFavorito.png";
 import iconNoFavorito from "./iconNoFavorito.png";

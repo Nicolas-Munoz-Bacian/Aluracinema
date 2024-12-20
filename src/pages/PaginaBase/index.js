@@ -1,6 +1,6 @@
 import Cabecera from "components/Cabecera/Cabecera"
 import Container from "components/Container"
-import FavoritoProvider from "context/Favoritos"
+import FavoritoProvider from "../../context/Favoritos"
 import Pie from "components/Pie"
 import { Outlet } from "react-router-dom"
 
