@@ -1,11 +1,11 @@
 import Titulo from "../../components/Titulo";
 import Banner from "../../components/Banner";
 import Card from "../../components/Card";
-import styles from "../../pages/inicio/index.module.css";
-import home from "../../pages/inicio/home.jpg"
+import styles from "../../pages/Inicio/index.module.css";
+import home from "../../pages/Inicio/home.jpg"
 import frontend from "../../pages/inicio/front end.png";
-import backend from "../../pages/inicio/back end.png";
-import innovacionYgestion from "../inicio/innovación y gestión.png";
+import backend from "../../pages/Inicio/back end.png";
+import innovacionYgestion from "../Inicio/innovación y gestión.png";
 import { useState, useEffect } from "react";
 
 function Inicio() {
