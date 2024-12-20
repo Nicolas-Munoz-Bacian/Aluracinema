@@ -4,7 +4,7 @@ import { useFavoritosContext } from "../context/FavoritosContext";
 import styles from "./Card.module.css";
 import iconFavorito from "./iconFavorito.png";
 import iconNoFavorito from "./iconNoFavorito.png";
-import EditModal from "./EditModal";
+import EditModal from "../../components/Card/edit.modal";
 
 function Card({ id, capa, titulo, descripcion, video }) {
     const { favorito, agregarFavorito } = useFavoritosContext();
